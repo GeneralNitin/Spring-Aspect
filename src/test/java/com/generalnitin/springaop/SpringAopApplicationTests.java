@@ -5,9 +5,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class SpringAopApplicationTests {
-
     @Test
-    void contextLoads() {
+    void test() {
+        SpringAopApplication.main(new String[0]);
     }
-
 }

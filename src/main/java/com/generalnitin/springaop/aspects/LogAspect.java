@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 @Aspect
 public class LogAspect {
-    @Around("@annotation(customAnnotation)")
+    @Around("@annotation(customAnnotation) && execution(* *(..))")
     public Object log(ProceedingJoinPoint joinPoint, CustomAnnotation customAnnotation) throws Throwable {
         String metricName = customAnnotation.metricName() != null ? customAnnotation.metricName() : "method.timer";
         StopWatch stopWatch = new StopWatch();

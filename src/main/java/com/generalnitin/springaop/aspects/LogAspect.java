@@ -3,11 +3,13 @@ package com.generalnitin.springaop.aspects;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
 import java.util.concurrent.TimeUnit;
 
 @Aspect
+@Component
 public class LogAspect {
     @Around("@annotation(customAnnotation)")
     public Object log(ProceedingJoinPoint joinPoint, CustomAnnotation customAnnotation) throws Throwable {
